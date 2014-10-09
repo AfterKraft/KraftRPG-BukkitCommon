@@ -25,10 +25,11 @@ public class BukkitExperienceChangeEvent extends Event implements ExperienceChan
     private FixedPoint change;
     private boolean cancelled;
 
-    public BukkitExperienceChangeEvent(final CommonVector3d vectorLocation, FixedPoint original, Sentient being, Role role) {
+    public BukkitExperienceChangeEvent(final CommonVector3d vectorLocation, FixedPoint original, FixedPoint change, Sentient being, Role role) {
         this.vectorLocation = vectorLocation;
         this.bukkitLocation = new Location(Bukkit.getWorld(vectorLocation.getWorld().getName()), vectorLocation.getX(), vectorLocation.getY(), vectorLocation.getZ());
         this.original = original;
+        this.change = change;
         this.being = being;
         this.role = role;
     }

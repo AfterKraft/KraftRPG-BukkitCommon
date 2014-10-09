@@ -30,6 +30,10 @@ import com.afterkraft.kraftrpg.common.inventory.ItemType;
 
 public class BukkitItemStack implements CommonItemStack {
 
+    public static BukkitItemStack fromBukkit(ItemStack itemStack) {
+        return new BukkitItemStack(new ItemStack(itemStack));
+    }
+
     private final ItemStack itemStack;
 
     public BukkitItemStack(final ItemStack itemStack) {
